@@ -29,3 +29,10 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 
 ### Task 5: Start documenting your experience
 - Updated this README with breakdown of steps taken thus far.
+
+## Milestone 3: Check if the guessed character is in the word
+- Refactored code to incorporate functions:
+  - 'ask_for_input()' -> Incorporated code requesting user input and calls 'check_guess()' function with 'guess' passed as an argument.
+  - 'check_guess()' -> Incorporated conditional logic checking whether user guess in randomly generated word.
+- Ensured user guess lowercase when checking against word using `.lower()` method.
+
