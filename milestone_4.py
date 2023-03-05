@@ -1,4 +1,6 @@
+
 import random
+import re
 
 class Hangman:
     def __init__(self, word_list, num_lives=5):
@@ -13,6 +15,11 @@ class Hangman:
             guess = guess.lower()
             if guess in self.word:
                 print(f'Good guess! {guess} is in the word.')
+                for letter in self.word:
+                    if letter == guess:
+                       match_idx = [match.start() for match in re.finditer(letter, self.word)]
+                       self.word_guessed = [letter if guessed_idx in match_idx else guessed_letter for guessed_idx, guessed_letter in enumerate(self.word_guessed)]                    
+                self.num_letters -= len(match_idx)
 
     def ask_for_input(self):
          while True:
@@ -22,8 +29,8 @@ class Hangman:
           elif self.guess in self.list_of_guesses:
             print('You already tried that letter!')
           else:
-            self.check_guess(self.guess)
             self.list_of_guesses.append(self.guess)
+            self.check_guess(self.guess)
             break
 
 hangman = Hangman(['apples', 'pears', 'kiwis'])
