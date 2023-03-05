@@ -18,6 +18,10 @@ class Hangman:
                        match_idx = [idx for idx in range(len(self.word)) if self.word.startswith(letter, idx)]
                        self.word_guessed = [letter if guessed_idx in match_idx else guessed_letter for guessed_idx, guessed_letter in enumerate(self.word_guessed)]                    
                 self.num_letters -= 1
+            else:
+                self.num_lives -= 1
+                print(f'Sorry, {guess} is not in the word')
+                print(f'You have {self.num_lives} lives left')
 
     def ask_for_input(self):
          while True:
