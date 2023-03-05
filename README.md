@@ -36,3 +36,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
   - 'check_guess()' -> Incorporated conditional logic checking whether user guess in randomly generated word.
 - Ensured user guess lowercase when checking against word using `.lower()` method.
 
+## Milestone 4: Completed game
+- Refactored code to incorporate class-instance structure with game initialised in a Hangman class.
+- Made previous check_guess() and ask_for_input() functions into instance methods and extended their functionality.
+- Created play_game() function to create game instance and, via a while loop, continue gameplay until player had won or lost.
