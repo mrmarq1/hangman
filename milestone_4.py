@@ -17,7 +17,7 @@ class Hangman:
                     if letter == guess:
                        match_idx = [idx for idx in range(len(self.word)) if self.word.startswith(letter, idx)]
                        self.word_guessed = [letter if guessed_idx in match_idx else guessed_letter for guessed_idx, guessed_letter in enumerate(self.word_guessed)]                    
-                self.num_letters -= len(match_idx)
+                self.num_letters -= 1
 
     def ask_for_input(self):
          while True:
