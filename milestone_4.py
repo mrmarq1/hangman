@@ -31,5 +31,5 @@ class Hangman:
             self.check_guess(self.guess)
             break
 
-hangman = Hangman(['apples', 'pears', 'kiwis'])
+hangman = Hangman(['apples', 'pears', 'pomegranates', 'kiwis'])
 hangman.ask_for_input()
