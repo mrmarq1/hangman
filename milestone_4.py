@@ -1,6 +1,4 @@
-
 import random
-import re
 
 class Hangman:
     def __init__(self, word_list, num_lives=5):
@@ -17,9 +15,9 @@ class Hangman:
                 print(f'Good guess! {guess} is in the word.')
                 for letter in self.word:
                     if letter == guess:
-                       match_idx = [match.start() for match in re.finditer(letter, self.word)]
-                       self.word_guessed = [letter if guessed_idx in match_idx else guessed_letter for guessed_idx, guessed_letter in enumerate(self.word_guessed)]                    
-                self.num_letters -= len(match_idx)
+                       letter_idx = self.word.index(letter)
+                       self.word_guessed[letter_idx] = letter                    
+                self.num_letters -= 1
 
     def ask_for_input(self):
          while True:
