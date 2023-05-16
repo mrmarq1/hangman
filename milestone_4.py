@@ -36,4 +36,4 @@ class Hangman:
             break
 
 hangman = Hangman(['apples', 'pears', 'kiwis'])
-hangman.ask_for_input()
+hangman.ask_for_input() 
